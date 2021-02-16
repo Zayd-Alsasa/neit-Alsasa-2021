@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Demo</title>
+    <style>
+        table{
+            border:1px solid black;
+        }
+        td, th{
+            border:1px solid black;
+        }
+        .Dodge{
+            background-color:red;
+        }
+        .Chevrolet{
+            background-color:cyan;
+        }
+        .Ford{
+            background-color:yellow;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <table>
+  <thead>
+    <tr>
+    <th colspan="3">
+       Cars 
+    </th>
+    </tr>
+    <tr>
+       <th>Make</th> 
+       <th>Model</th>
+       <th>HP</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr><td></td> <td> </td> <td colspan="3"> </td></tr>
+<tr><td></td> <td> </td> <td colspan="3"> </td></tr>
+<tr><td></td> <td> </td> <td colspan="3"> </td></tr>
+<tr><td></td> <td> </td> <td colspan="3"> </td></tr>
+<tr><td></td> <td> </td> <td colspan="3"> </td></tr>
+<tr><td></td> <td> </td> <td colspan="3"> </td></tr>
+
+  </tbody> 
+  <tfoot>
+    <tr><td colspan="3">&copy Zayd Alsasa 2021</td></tr>
+  </tfoot>
+</table>
+<!--Make a table here-->
+    <!--
+        *Make a thead with two rows
+            a. One that has one cell that spans three columns
+               This cell should contain a table head <th> with the word "Cars"
+            b. One that has three cells
+                The cells should contain table heads <th> that read "Make", "Model" and "HP"
+    -->
+    <!--*Make a tbody with six rows and three columns in each row-->
+    <!--*Make a tfoot one cell that spans three columns. 
+         This cell should contain a copyright-->
+
+    <!--*Your final table should look like the screenshot below-->
+<hr>
+<div>
+    <img src="images/screenshot.png" alt="screen shot">
+</div>
+<script>
+    var tbody = document.querySelector(`tbody`);
+    var tr = document.querySelectorAll(`tbody tr`)
+    console.log(tr)
+    var data =[
+                {make:'Dodge', model:'Viper', hp:645},
+                {make:'Chevrolet', model:'Corvette', hp:495},
+                {make:'Ford', model:'Mustang', hp:444},
+                {make:'Dodge', model:'Charger', hp:717},
+                {make:'Chevrolet', model:'Camaro', hp:650},
+                {make:'Ford', model:'GT', hp:550},
+            ]
+
+    var bodyText = ``;
+
+    for(var a=0; a<data.length-1; a++)
+    {  
+        for(var b=0; b<data.length-1; b++)
+        {  
+            if(data[b].hp < data[b+1].hp)
+            {
+               let temp = data[b]
+               data[b] = data[b+1]
+               data[b+1] = temp
+            }
+        }
+    }
+
+    for(var i=0; i<data.length; i++)
+    {   
+       tr[i].classList.add(data[i].make)
+       tr[i].children[0].innerText = data[i].make
+       tr[i].children[1].innerText = data[i].model
+       tr[i].children[2].innerText = data[i].hp
+    }
+    tbody.innerHTML = body;
+</script>
+</body>
+</html>
