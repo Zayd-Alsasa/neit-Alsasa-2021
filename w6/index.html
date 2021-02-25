@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Zayd Alsasa">
+    <meta name="description" content="Javascript Pay Calculator">
+    <meta name="title" content="Pay Calculator">
+</head>
+
+<html>
+    <body>
+        <h1>
+            Javascript Pay Calculator
+        </h1>
+        <div id="container">
+        <script>
+            var hourly_pay =prompt("What is your hourly pay?:$");
+            var hours_work =prompt("Hours worked?:");
+            var tax_rate =prompt("Tax rate?:");
+            var gross_pay = (hourly_pay * hours_work).toFixed(2);
+            var tax_cut = (hourly_pay * hours_work * tax_rate).toFixed(2);
+            var net_pay = (gross_pay - tax_cut).toFixed(2);
+            window.alert('Gross pay:$'+gross_pay +"\n"+'tax cut is:$'+tax_cut +"\n"+ 'net pay is:$'+net_pay +"\n"+'gross pay is:$'+gross_pay)
+            console.log('tax cut is:$'+tax_cut)
+            console.log('net pay is:$'+net_pay)
+            console.log('gross pay is:$'+gross_pay)
+        </script>
+        </div>
+    </body>
+</html>
