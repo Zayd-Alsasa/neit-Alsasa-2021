@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 9 | DOM and BOM </title>
+</head>
+<body>
+    <script>
+        var x = 10; //Number
+        var y = 'Words go here ${x}' //string
+        var z = true //boolean
+
+        var obj = {
+            stuff: 'foo',
+            things: 'bar',
+            number: 0 
+        }
+        console.log(obj)
+        console.log(obj.number)
+
+        for(key in obj)
+        {
+            console.log(key)
+            console.log(typeof key)
+            console.log(obj[key])
+        }
+        var arr = [
+            'bob',
+            'Joe'
+        ]
+        var arr2 = [
+            'bob',
+            'Joe'
+        ]
+      var peeps = [
+          {f:'Austin', l:'Giacobone'},
+          {f:'Jamahri', l:'Thomas'}
+      ]
+      console.log(peeps[0].f)
+
+    </script>
+</body>
+</html>
